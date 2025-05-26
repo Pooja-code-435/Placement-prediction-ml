@@ -1,0 +1,109 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+header {
+  background-color: #003366;
+  padding: 15px 0;
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #1e90ff;
+}
+
+/* About Page */
+.container.about-page {
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-page h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.about-page h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #00509e;
+}
+
+.about-page p {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.about-page ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.about-page li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.about-page .note {
+  font-style: italic;
+  background-color: #f0f8ff;
+  padding: 10px;
+  border-left: 4px solid #1e90ff;
+  margin-top: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #e8eef4;
+  padding: 20px;
+  color: #555;
+  font-size: 14px;
+  margin-top: 50px;
+}

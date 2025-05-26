@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predict | Placement Prediction System</title>
+  <link rel="stylesheet" href="static/css/predict.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  {% if prediction %}
+  <script>
+    Swal.fire({
+      title: '<strong>Placement Prediction: {{ prediction }}</strong>',
+      icon: '{{ "success" if "placed" in prediction|lower else "warning" }}',
+      html: `
+        <b>This is the predicted placement outcome based on the entered details.</b><br>
+        <ul style="text-align: left; margin-top: 10px;">
+          <li><b>Placed:</b> Likely to get placed</li>
+          <li><b>Not Placed:</b> Unlikely to get placed</li>
+        </ul>
+      `,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: `Got it!`,
+      cancelButtonText: `Close`
+    });
+  </script>
+  {% endif %}
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="logo">PlacePredict</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/predict" class="active">Predict</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="predict-container">
+  <h1>Placement Prediction Form</h1>
+  <form action="/predict" method="POST">
+
+    <label for="cgpa">CGPA</label>
+    <input type="number" step="0.1" id="cgpa" name="cgpa" placeholder="Enter CGPA" required />
+
+    <label for="internships">Number of Internships</label>
+    <input type="number" step="1"id="internships" name="internships" placeholder="Enter number of internships" required /> 
+
+    <label for="projects">Number of Projects</label>
+    <input type="number"  step="1" id="projects" name="projects" placeholder="Enter number of projects" required />
+
+    <label for="certificate">Number of Certifications</label>
+    <input type="number" step="1" id="certificate" name="certificate" placeholder="Enter number of certifications" required />
+
+    <label for="aptitude_score">Aptitude Score</label>
+    <input type="number" step="1" id="aptitude_score" name="aptitude_score" placeholder="Enter aptitude score" required />
+
+    <label for="soft_skills">Soft Skills Score</label>
+    <input type="number" step="0.1" id="soft_skills" name="soft_skills" placeholder="Enter soft skills score" required />
+
+    <label for="Extracurricular">Attended Extracurricular</label>
+    <select id="Extracurricular" name="Extracurricular" required>
+      <option value="">-- Select --</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="Training">Attended Placement Training</label>
+    <select id="Training" name="Training" required>
+      <option value="">-- Select --</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <label for="ssc_marks">SSC Marks</label>
+    <input type="number" step="1" id="ssc_marks" name="ssc_marks" placeholder="Enter SSC marks" required />
+
+    <label for="hsc_marks">HSC Marks</label>
+    <input type="number" step="1" id="hsc_marks" name="hsc_marks" placeholder="Enter HSC marks" required />
+
+    <button type="submit">Predict</button>
+  </form>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Placement Predictor | Powered by Flask & ML</p>
+  </footer>
+</body>
+</html>
